@@ -5,7 +5,7 @@ let install = null;
 window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
     install = event;
-    butinstall.removeAttribute('hidden');
+    butInstall.removeAttribute('hidden');
 });
 
 // TODO: Implement a click event handler on the `butInstall` element
