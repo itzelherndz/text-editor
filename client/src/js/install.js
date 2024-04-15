@@ -1,29 +1,29 @@
 const butInstall = document.getElementById('buttonInstall');
-let install = null;
+
 // Logic for installing the PWA
-// TODO: Add an event handler to the `beforeinstallprompt` event
+// Event handler to the `beforeinstallprompt` event
 window.addEventListener('beforeinstallprompt', (event) => {
-    event.preventDefault();
-    install = event;
+    // event.preventDefault();
+    window.deferredPrompt = event;
     butInstall.removeAttribute('hidden');
 });
 
-// TODO: Implement a click event handler on the `butInstall` element
+// A click event handler on the `butInstall` element
 butInstall.addEventListener('click', async () => {
-    if (!install){
+    if (!window.defferedPrompt){
         return;
     }
-    const result = await install.prompt();
+    const result = await window.deferredPrompt.prompt();
     console.log(`Install prompt was : ${result.outcome}`);
 
-    install = null;
+    window.deferredPrompt = null;
     butInstall.setAttribute('hidden','');
 });
 
-// TODO: Add an handler for the `appinstalled` event
+// Handler for the `appinstalled` event
 window.addEventListener('appinstalled', (event) => {
-    event.preventDefault();
-    install = null;
+    // event.preventDefault();
+    window.deferredPrompt = null;
     butInstall.setAttribute('hidden','');
     window.alert('JATE Installed.');
 });
