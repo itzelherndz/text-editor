@@ -26,6 +26,8 @@ In either case, the user should be able to enter their text and have it saved. U
 
 ## Credits
 
+[Starter Code](https://github.com/coding-boot-camp/cautious-meme)
+
 Troubleshooting: [Gabe Harvey](https://github.com/gabeharvey) & Paul McCaughtry
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Trigger_install_prompt)
